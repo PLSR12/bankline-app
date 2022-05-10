@@ -30,7 +30,6 @@
           class="btn btn-outline-primary me-md-2"
           type="button"
           (click)="save()"
-          onClick="alert('Correntista criado')"
         >
           Gravar
         </button>
@@ -45,9 +44,11 @@
     style="width: 18rem"
   >
     <div class="border border-dark">
+      <div class="container-text" >
       <h5 class="card-title">{{ item.nome }}</h5>
       <p class="card-text">Conta N° {{ item.conta.numero }}</p>
       <p class="card-text">Saldo {{ item.conta.saldo | currency: "BRL" }}</p>
+      </div>
     </div>
   </div>
 </div>
