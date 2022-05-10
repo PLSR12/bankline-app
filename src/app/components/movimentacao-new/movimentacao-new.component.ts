@@ -52,16 +52,14 @@ export class MovimentacaoNewComponent implements OnInit {
       response => {
         console.log(response)
         this.toast.success({
-          detail: 'Sucess Message',
-          summary: 'Movimentação feita com sucesso',
+          detail: 'Movimentação feita com sucesso',
           duration: 3000
         })
       },
       err => {
         console.log(err)
         this.toast.error({
-          detail: 'Error Message',
-          summary: 'Erro ao realizar a movimentação',
+          detail: 'Erro ao realizar a movimentação',
           duration: 3000
         })
       }

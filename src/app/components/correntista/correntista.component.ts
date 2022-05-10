@@ -41,8 +41,7 @@ export class CorrentistaComponent implements OnInit {
       response => {
         console.log(response)
         this.toast.success({
-          detail: 'Sucess Message',
-          summary: 'Correntista criado com sucesso',
+          detail:  'Correntista criado com sucesso',
           duration: 3000
         })
         this.exibirCorrentistas()
@@ -50,8 +49,7 @@ export class CorrentistaComponent implements OnInit {
       err => {
         console.log(err)
         this.toast.error({
-          detail: 'Error Message',
-          summary: 'Erro ao criar novo correntista',
+          detail: 'Erro ao criar novo correntista',
           duration: 3000
         })
       }
