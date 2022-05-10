@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { CorrentistaService } from 'src/app/services/correntista.service'
 import { MovimentacaoService } from 'src/app/services/movimentacao.service'
+import { NgToastService } from 'ng-angular-popup'
 
 @Component({
   selector: 'app-movimentacao-new',
@@ -18,7 +19,8 @@ export class MovimentacaoNewComponent implements OnInit {
 
   constructor (
     private movimentacaoService: MovimentacaoService,
-    private correntistaService: CorrentistaService
+    private correntistaService: CorrentistaService,
+    private toast: NgToastService
   ) {}
 
   ngOnInit (): void {
@@ -44,15 +46,25 @@ export class MovimentacaoNewComponent implements OnInit {
       idConta: this.correntista.id,
       dataHora: this.dataHora
     }
-  
-  console.log(movimentacao);
-  this.movimentacaoService.create(movimentacao)
-    .subscribe(
+
+    console.log(movimentacao)
+    this.movimentacaoService.create(movimentacao).subscribe(
       response => {
-        console.log(response);
+        console.log(response)
+        this.toast.success({
+          detail: 'Sucess Message',
+          summary: 'Movimentação feita com sucesso',
+          duration: 3000
+        })
       },
-      error => {
-        console.log(error);
-      });
-}
+      err => {
+        console.log(err)
+        this.toast.error({
+          detail: 'Error Message',
+          summary: 'Erro ao realizar a movimentação',
+          duration: 3000
+        })
+      }
+    )
+  }
 }
