@@ -25,6 +25,7 @@ O projeto é uma linha bancária, que realiza tranferências bancárias para os 
 ## :computer: Technologies
 
 ![ANGULAR](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![TYPESCRIPT](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
 Made with ♥ by Pedro Dos Santos :wave: [Get in touch!](https://www.linkedin.com/in/pedro-lucas-dos-santos/)
 
